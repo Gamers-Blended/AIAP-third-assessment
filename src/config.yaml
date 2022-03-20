@@ -1,0 +1,48 @@
+# INITIAL SETTINGS
+target_name: Survive # variable to predict
+test_size: 0.2 # any integer value
+drop_columns: ['ID', 'Favorite_color', 'Creatine_phosphokinase'] # columns to remove from processing
+# DO NOT REMOVE THESE COLUMNS: Survive, Gender, Smoke, Ejection_Fraction, Age, Height, Weight
+normal_columns: ['Age', 'Sodium', 'Creatinine', 'Platelets', 'Blood_Pressure', 'Hemoglobin'] # columns to normalise
+ 
+# model selector
+selected_model: kNN # kNN, Rf, SVC
+
+
+# kNN parameters
+n_neighbors: 2 # any integer value
+weights: uniform # distance, uniform
+algorithm: auto # auto, ball_tree, kd_tree, brute
+leaf_size: 15 # 30
+p: 2 # any integer value
+metric: minkowski
+n_jobs: 1 # any integer value
+
+
+# Rf parameters
+n_estimators: 100 # any integer value
+criterion: gini # gini, entropy
+min_samples_split: 2 # any integer or float value
+min_samples_leaf: 1 # any integer or float value
+min_weight_fraction_leaf: 0.0 # float value
+max_features: auto # auto, sqrt, log2
+bootstrap: True # True, False
+oob_score: False # True, False
+n_jobs: 1 # any integer value
+random_state: 42 # any integer value
+verbose: 0 # any integer value
+class_weight: balanced_subsample # balanced, balanced_subsample
+
+
+# SVC parameters
+C: 1.0 # float, must be strictly positive
+kernel: rbf # linear, poly, rbf, sigmoid, precomputed
+degree: 3 # any integer value
+gamma: 0.001 # float
+probability: False # True, False
+class_weight: balanced # None
+verbose_svc: False # any integer value
+max_iter: -1 # any integer value, -1 means no limit
+decision_function_shape: ovr #ovo, ovr
+break_ties: False # True, False
+random_state: 42 # any integer value
